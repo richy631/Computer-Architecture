@@ -1,0 +1,29 @@
+Command line:
+   Pipe_CPU_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  53182
+
+Wed May 27 19:06:33 2015
+
+
+ Elaboration Time: 0.03125 sec
+
+ Current Memory Usage: 521.593 Meg
+
+ Total Signals          : 190
+ Total Nets             : 2033
+ Total Signal Drivers   : 99
+ Total Blocks           : 21
+ Total Primitive Blocks : 20
+ Total Processes        : 111
+ Total Traceable Variables  : 103
+ Total Scalar Nets and Variables : 6031
+Total Line Count : 183
+
+ Total Simulation Time: 0.046875 sec
+
+ Current Memory Usage: 678.887 Meg
+
+Wed May 27 19:07:27 2015
+

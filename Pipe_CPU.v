@@ -46,8 +46,8 @@ wire [32-1:0] ID_EX_pc_o;
 wire [32-1:0] ID_EX_RSdata_o;
 wire [32-1:0] ID_EX_RTdata_o;
 wire [32-1:0] ID_EX_Sign_o;
-wire [6-1:0] ID_EX_instr20_16_o;
-wire [6-1:0] ID_EX_instr15_11_o;
+wire [5-1:0] ID_EX_instr20_16_o;
+wire [5-1:0] ID_EX_instr15_11_o;
 
 //control signal ...
 wire ID_EX_RegWrite_o;
@@ -64,7 +64,7 @@ wire ID_EX_MemtoReg_o;
 /**** EX stage ****/
 wire [4-1:0]	ALUctrl;
 wire [32-1:0] MUX1_o;
-wire [6-1:0] MUX2_o;
+wire [5-1:0] MUX2_o;
 wire [32-1:0] ALU_result_o;
 wire zero_o;
 wire [32-1:0] Shift_o;
@@ -75,7 +75,7 @@ wire [32-1:0] EX_M_Adder2_branch_o;
 wire EX_M_zero_o;
 wire [32-1:0] EX_M_ALU_result_o;
 wire [32-1:0] EX_M_RTdata_o;
-wire [6-1:0] EX_M_MUX2_o;
+wire [5-1:0] EX_M_MUX2_o;
 
 //control signal ...
 wire EX_M_WB_RegWrite_o;
@@ -94,11 +94,12 @@ wire M_WB_RegWrite_o;
 wire M_WB_MemtoReg_o;
 wire [32-1:0] M_WB_DM_o;
 wire [32-1:0] M_WB_ALU_result_o;
-wire [6-1:0] M_WB_MUX2_o;
+wire [5-1:0] M_WB_MUX2_o;
 wire [32-1:0] MUXWB_o;
 //control signal ...
 
 /**** Data hazard ****/
+
 
 //control signal ...
 
