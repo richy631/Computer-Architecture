@@ -10,8 +10,7 @@ module Pipe_EX_MEM(
 	zero_i,			zero_o,
 	ALU_result_i,	ALU_result_o,
 	Write_data_i,	Write_data_o,
-	MUX2_i,			MUX2_o,
-	
+	MUX2_i,			MUX2_o
 );
 	input rst_i;
 	input clk_i;		  
