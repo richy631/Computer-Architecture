@@ -148,7 +148,7 @@ Reg_File RF(
 	.RTaddr_i(IF_ID_instr_o[20:16]),	//rt
 	.RDaddr_i(M_WB_MUX2_o),
 	.RDdata_i(MUXWB_o),
-	.RegWrite_i(RegWrite),
+	.RegWrite_i(M_WB_RegWrite_o),
 	.RSdata_o(RSdata),
 	.RTdata_o(RTdata)
 );
