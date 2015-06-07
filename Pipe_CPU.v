@@ -110,25 +110,25 @@ wire [32-1:0] MUXWB_o;
 ProgramCounter PC(
 	.clk_i(clk_i),
 	.rst_i(rst_n),
-	.pc_in_i(pc_in),
-	.pc_out_o(pc_out)
+	.pc_in_i(pc_in),//
+	.pc_out_o(pc_out)//
 );
 
 Adder Add_pc(
-	.src1_i(32'd4),
-	.src2_i(pc_out),
-	.sum_o(pc_sum)
+	.src1_i(32'd4),//
+	.src2_i(pc_out),//
+	.sum_o(pc_sum)//
 );
 
 MUX_2to1 #(.size(32)) PCMUX(
-	.data0_i(pc_sum),
+	.data0_i(pc_sum),//
 	.data1_i(EX_M_zero_o),
 	.select_i(PCSrc),
-	.data_o(pc_in)
+	.data_o(pc_in)//
 );
 
 Instr_Memory IM(
-	.pc_addr_i(pc_out),
+	.pc_addr_i(pc_out),//
 	.instr_o(instr_o)
 );
 			
@@ -137,7 +137,7 @@ Pipe_IF_ID IF_ID(
 	.rst_i(rst_n),
 	.clk_i(clk_i),
 	.instr_i(instr_o),	.instr_o(IF_ID_instr_o),
-	.pc_i(pc_sum),			.pc_o(IF_ID_pc_o)
+	.pc_i(pc_sum),			.pc_o(IF_ID_pc_o)//
 );
 		
 //Instantiate the components in ID stage
@@ -174,18 +174,18 @@ Sign_Extend Sign_Extend(
 Pipe_ID_EX ID_EX(
 	.rst_i(rst_n),
 	.clk_i(clk_i),
-	.WB_RegWrite_i(RegWrite),	.WB_RegWrite_o(ID_EX_WB_RegWrite_o),
-	.WB_MemtoReg_i(MemtoReg),	.WB_MemtoReg_o(ID_EX_WB_MemtoReg_o),
-	.M_branch_i(branch),			.M_branch_o(ID_EX_M_branch_o),
-	.M_MemRead_i(MemRead),		.M_MemRead_o(ID_EX_M_MemRead_o),
-	.M_MemWrite_i(MemWrite),	.M_MemWrite_o(ID_EX_M_MemWrite_o),
-	.EX_ALUop_i(ALUop),			.EX_ALUop_o(ID_EX_ALUop_o),
-	.EX_ALUsrc_i(ALUsrc),		.EX_ALUsrc_o(ID_EX_ALUsrc_o),
-	.EX_RegDst_i(RegDst),		.EX_RegDst_o(ID_EX_RegDst_o),
-	.pc_i(pc_sum),					.pc_o(ID_EX_pc_o),
-	.RSdata_i(RSdata),			.RSdata_o(ID_EX_RSdata_o),
-	.RTdata_i(RTdata),			.RTdata_o(ID_EX_RTdata_o),
-	.Sign_i(Sign_o),				.Sign_o(ID_EX_Sign_o),
+	.WB_RegWrite_i(RegWrite),					.WB_RegWrite_o(ID_EX_WB_RegWrite_o),
+	.WB_MemtoReg_i(MemtoReg),					.WB_MemtoReg_o(ID_EX_WB_MemtoReg_o),
+	.M_branch_i(branch),							.M_branch_o(ID_EX_M_branch_o),
+	.M_MemRead_i(MemRead),						.M_MemRead_o(ID_EX_M_MemRead_o),
+	.M_MemWrite_i(MemWrite),					.M_MemWrite_o(ID_EX_M_MemWrite_o),
+	.EX_ALUop_i(ALUop),							.EX_ALUop_o(ID_EX_ALUop_o),
+	.EX_ALUsrc_i(ALUsrc),						.EX_ALUsrc_o(ID_EX_ALUsrc_o),
+	.EX_RegDst_i(RegDst),						.EX_RegDst_o(ID_EX_RegDst_o),
+	.pc_i(IF_ID_pc_o),							.pc_o(ID_EX_pc_o),
+	.RSdata_i(RSdata),							.RSdata_o(ID_EX_RSdata_o),
+	.RTdata_i(RTdata),							.RTdata_o(ID_EX_RTdata_o),
+	.Sign_i(Sign_o),								.Sign_o(ID_EX_Sign_o),
 	.instr20_16_i(IF_ID_instr_o[20:16]),	.instr20_16_o(ID_EX_instr20_16_o),
 	.instr15_11_i(IF_ID_instr_o[15:11]),	.instr15_11_o(ID_EX_instr15_11_o)
 );
@@ -238,11 +238,11 @@ Pipe_EX_MEM EX_M(
 	.M_branch_i(ID_EX_M_branch_o),			.M_branch_o(EX_M_branch_o),
 	.M_MemRead_i(ID_EX_M_MemRead_o),			.M_MemRead_o(EX_M_MemRead_o),
 	.M_MemWrite_i(ID_EX_M_MemWrite_o),		.M_MemWrite_o(EX_M_MemWrite_o),
-	.Adder2_i(Adder2_branch_o),		.Adder2_o(EX_M_Adder2_branch_o),
-	.zero_i(zero_o),						.zero_o(EX_M_zero_o),
-	.ALU_result_i(ALU_result_o),		.ALU_result_o(EX_M_ALU_result_o),
-	.Write_data_i(ID_EX_RTdata_o),	.Write_data_o(EX_M_RTdata_o),
-	.MUX2_i(MUX2_o),						.MUX2_o(EX_M_MUX2_o)
+	.Adder2_i(Adder2_branch_o),				.Adder2_o(EX_M_Adder2_branch_o),
+	.zero_i(zero_o),								.zero_o(EX_M_zero_o),
+	.ALU_result_i(ALU_result_o),				.ALU_result_o(EX_M_ALU_result_o),
+	.Write_data_i(ID_EX_RTdata_o),			.Write_data_o(EX_M_RTdata_o),
+	.MUX2_i(MUX2_o),								.MUX2_o(EX_M_MUX2_o)
 );
 
 	

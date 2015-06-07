@@ -5,5 +5,8 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"D:/Computer_Architecture/final_102062106/Pipe_CPU.v" Line 125: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">data1_i</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
 </messages>
 

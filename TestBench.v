@@ -33,7 +33,7 @@ Pipe_CPU cpu(
 always #(`CYCLE_TIME/2) CLK = ~CLK;	
 
 initial  begin
-	$readmemb("Pipeline_test.txt", cpu.IM.Instr_Mem);
+	$readmemb("123.txt", cpu.IM.Instr_Mem);
     //  
 	CLK = 0; 
 	RST = 0;
@@ -90,9 +90,9 @@ always@(posedge CLK) begin
 		 $display("======================================================\n");
 		 $display("======================================================\n");
 		 */
-		//if( count == 12 ) begin 
+		if( count == 12 ) begin 
 			//print result to transcript 
-			//$display("\n==========================================================================================\n");
+			$display("\n==========================================================================================\n");
 			$display("---------------------------------Register-------------------------------------------------\n");
 			$display("r0=%d, r1=%d, r2=%d, r3=%d, r4=%d, r5=%d, r6=%d, r7=%d\n",
 			cpu.RF.Reg_File[0], cpu.RF.Reg_File[1], 
@@ -113,14 +113,14 @@ always@(posedge CLK) begin
 						 cpu.DM.memory[8], cpu.DM.memory[9], cpu.DM.memory[10], cpu.DM.memory[11],
 						 cpu.DM.memory[12], cpu.DM.memory[13], cpu.DM.memory[14], cpu.DM.memory[15],
 					  );
-			//$display("\n==========================================================================================\n");
+			$display("\n==========================================================================================\n");
 
 
-		//end
+		end
 
 		if( count == 15 ) begin 
 			//print result to transcript 
-			//$display("\n==========================================================================================\n");
+			$display("\n==========================================================================================\n");
 			$display("---------------------------------Register-------------------------------------------------\n");
 			$display("r0=%d, r1=%d, r2=%d, r3=%d, r4=%d, r5=%d, r6=%d, r7=%d\n",
 			cpu.RF.Reg_File[0], cpu.RF.Reg_File[1], 
@@ -141,7 +141,7 @@ always@(posedge CLK) begin
 						 cpu.DM.memory[8], cpu.DM.memory[9], cpu.DM.memory[10], cpu.DM.memory[11],
 						 cpu.DM.memory[12], cpu.DM.memory[13], cpu.DM.memory[14], cpu.DM.memory[15],
 					  );
-			//$display("\n==========================================================================================\n");
+			$display("\n==========================================================================================\n");
 
 
 		end

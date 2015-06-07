@@ -21,13 +21,13 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "D:/Computer-Architecture/Instr_Memory.v";
+static const char *ng0 = "D:/Computer_Architecture/final_102062106/Instr_Memory.v";
 static int ng1[] = {4, 0};
 static int ng2[] = {0, 0};
 static int ng3[] = {32, 0};
 static unsigned int ng4[] = {0U, 0U};
 static int ng5[] = {1, 0};
-static const char *ng6 = "Pipeline_test";
+static const char *ng6 = "123";
 
 
 

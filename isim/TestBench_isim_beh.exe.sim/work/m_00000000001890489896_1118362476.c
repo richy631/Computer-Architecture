@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "D:/Computer-Architecture/MUX_2to1.v";
+static const char *ng0 = "D:/Computer_Architecture/final_102062106/MUX_2to1.v";
 static int ng1[] = {0, 0};
 
 

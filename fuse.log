@@ -1,27 +1,28 @@
-Running: D:\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o D:/Computer-Architecture/TestBench_isim_beh.exe -prj D:/Computer-Architecture/TestBench_beh.prj work.TestBench work.glbl 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o D:/Computer_Architecture/final_102062106/TestBench_isim_beh.exe -prj D:/Computer_Architecture/final_102062106/TestBench_beh.prj TestBench work.glbl 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Analyzing Verilog file "D:/Computer-Architecture/Sign_Extend.v" into library work
-Analyzing Verilog file "D:/Computer-Architecture/Shift_Left_Two_32.v" into library work
-Analyzing Verilog file "D:/Computer-Architecture/Reg_File.v" into library work
-Analyzing Verilog file "D:/Computer-Architecture/ProgramCounter.v" into library work
-Analyzing Verilog file "D:/Computer-Architecture/Pipe_MEM_WB.v" into library work
-Analyzing Verilog file "D:/Computer-Architecture/Pipe_IF_ID.v" into library work
-Analyzing Verilog file "D:/Computer-Architecture/Pipe_ID_EX.v" into library work
-Analyzing Verilog file "D:/Computer-Architecture/Pipe_EX_MEM.v" into library work
-Analyzing Verilog file "D:/Computer-Architecture/MUX_2to1.v" into library work
-Analyzing Verilog file "D:/Computer-Architecture/Instr_Memory.v" into library work
-Analyzing Verilog file "D:/Computer-Architecture/Decoder.v" into library work
-Analyzing Verilog file "D:/Computer-Architecture/Data_Memory.v" into library work
-Analyzing Verilog file "D:/Computer-Architecture/ALU_Ctrl.v" into library work
-Analyzing Verilog file "D:/Computer-Architecture/ALU.v" into library work
-Analyzing Verilog file "D:/Computer-Architecture/Adder.v" into library work
-Analyzing Verilog file "D:/Computer-Architecture/Pipe_CPU.v" into library work
-Analyzing Verilog file "D:/Computer-Architecture/TestBench.v" into library work
-Analyzing Verilog file "D:/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/Sign_Extend.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/Shift_Left_Two_32.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/Reg_File.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/ProgramCounter.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/Pipe_MEM_WB.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/Pipe_IF_ID.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/Pipe_ID_EX.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/Pipe_EX_MEM.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/MUX_2to1.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/Instr_Memory.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/Decoder.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/Data_Memory.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/ALU_Ctrl.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/ALU.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/Adder.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/Pipe_CPU.v" into library work
+Analyzing Verilog file "D:/Computer_Architecture/final_102062106/TestBench.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:189 - "D:/Computer_Architecture/final_102062106/Pipe_CPU.v" Line 125: Size mismatch in connection of port <data1_i>. Formal port size is 32-bit while actual signal size is 1-bit.
 Completed static elaboration
 Compiling module ProgramCounter
 Compiling module Adder
@@ -43,8 +44,8 @@ Compiling module Pipe_CPU
 Compiling module TestBench
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 7 sub-compilation(s) to finish...
+Waiting for 9 sub-compilation(s) to finish...
 Compiled 19 Verilog Units
-Built simulation executable D:/Computer-Architecture/TestBench_isim_beh.exe
-Fuse Memory Usage: 27512 KB
-Fuse CPU Usage: 2342 ms
+Built simulation executable D:/Computer_Architecture/final_102062106/TestBench_isim_beh.exe
+Fuse Memory Usage: 27536 KB
+Fuse CPU Usage: 546 ms
