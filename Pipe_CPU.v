@@ -129,14 +129,14 @@ MUX_2to1 #(.size(32)) PCMUX(
 
 Instr_Memory IM(
 	.pc_addr_i(pc_out),//
-	.instr_o(instr_o)
+	.instr_o(instr_o)//
 );
 			
 
 Pipe_IF_ID IF_ID(
 	.rst_i(rst_n),
 	.clk_i(clk_i),
-	.instr_i(instr_o),	.instr_o(IF_ID_instr_o),
+	.instr_i(instr_o),	.instr_o(IF_ID_instr_o),//
 	.pc_i(pc_sum),			.pc_o(IF_ID_pc_o)//
 );
 		
@@ -144,17 +144,17 @@ Pipe_IF_ID IF_ID(
 Reg_File RF(
 	.clk_i(clk_i),
 	.rst_i(rst_n),
-	.RSaddr_i(IF_ID_instr_o[25:21]),	//rs
-	.RTaddr_i(IF_ID_instr_o[20:16]),	//rt
+	.RSaddr_i(IF_ID_instr_o[25:21]),	//rs//
+	.RTaddr_i(IF_ID_instr_o[20:16]),	//rt//
 	.RDaddr_i(M_WB_MUX2_o),
 	.RDdata_i(MUXWB_o),
 	.RegWrite_i(M_WB_RegWrite_o),
-	.RSdata_o(RSdata),
-	.RTdata_o(RTdata)
+	.RSdata_o(RSdata),//
+	.RTdata_o(RTdata)//
 );
 
 Decoder Control(
-	.instr_op_i(IF_ID_instr_o[31:26]),//instruction opcode
+	.instr_op_i(IF_ID_instr_o[31:26]),//instruction opcode//
 	.RegWrite_o(RegWrite),
 	.ALU_op_o(ALUop),
 	.ALUSrc_o(ALUsrc),
@@ -167,7 +167,7 @@ Decoder Control(
 );
 
 Sign_Extend Sign_Extend(
-	.data_i(IF_ID_instr_o[16-1:0]),
+	.data_i(IF_ID_instr_o[16-1:0]),//
 	.data_o(Sign_o)
 );	
 
@@ -182,22 +182,22 @@ Pipe_ID_EX ID_EX(
 	.EX_ALUop_i(ALUop),							.EX_ALUop_o(ID_EX_ALUop_o),
 	.EX_ALUsrc_i(ALUsrc),						.EX_ALUsrc_o(ID_EX_ALUsrc_o),
 	.EX_RegDst_i(RegDst),						.EX_RegDst_o(ID_EX_RegDst_o),
-	.pc_i(IF_ID_pc_o),							.pc_o(ID_EX_pc_o),
-	.RSdata_i(RSdata),							.RSdata_o(ID_EX_RSdata_o),
-	.RTdata_i(RTdata),							.RTdata_o(ID_EX_RTdata_o),
+	.pc_i(IF_ID_pc_o),							.pc_o(ID_EX_pc_o),//
+	.RSdata_i(RSdata),							.RSdata_o(ID_EX_RSdata_o),//
+	.RTdata_i(RTdata),							.RTdata_o(ID_EX_RTdata_o),//
 	.Sign_i(Sign_o),								.Sign_o(ID_EX_Sign_o),
-	.instr20_16_i(IF_ID_instr_o[20:16]),	.instr20_16_o(ID_EX_instr20_16_o),
-	.instr15_11_i(IF_ID_instr_o[15:11]),	.instr15_11_o(ID_EX_instr15_11_o)
+	.instr20_16_i(IF_ID_instr_o[20:16]),	.instr20_16_o(ID_EX_instr20_16_o),//
+	.instr15_11_i(IF_ID_instr_o[15:11]),	.instr15_11_o(ID_EX_instr15_11_o)//
 );
 		
 //Instantiate the components in EX stage	   
 ALU ALU(
-	.rst_n_i(rst_n),	// negative reset            (input)
-	.src1_i(ID_EX_RSdata_o),			// 32 bits source 1          (input)
-	.src2_i(MUX1_o),			// 32 bits source 2          (input)
-	.ALU_control_i(ALUCtrl),	// 4 bits ALU control input  (input)
-	.result_o(ALU_result_o),		// 32 bits result            (output)
-	.zero_o(zero_o)			// 1 bit when the output is 0, zero must be set (output)
+	.rst_n_i(rst_n),						// negative reset            (input)
+	.src1_i(ID_EX_RSdata_o),			// 32 bits source 1          (input)//
+	.src2_i(MUX1_o),						// 32 bits source 2          (input)
+	.ALU_control_i(ALUCtrl),			// 4 bits ALU control input  (input)
+	.result_o(ALU_result_o),			// 32 bits result            (output)
+	.zero_o(zero_o)						// 1 bit when the output is 0, zero must be set (output)
 );
 		
 ALU_Ctrl ALU_Control(
@@ -207,15 +207,15 @@ ALU_Ctrl ALU_Control(
 );
 
 MUX_2to1 #(.size(32)) Mux1(
-	.data0_i(ID_EX_RTdata_o),
+	.data0_i(ID_EX_RTdata_o),//
 	.data1_i(ID_EX_Sign_o),
 	.select_i(ID_EX_ALUSrc_o),
 	.data_o(MUX1_o)
 );
 		
 MUX_2to1 #(.size(5)) Mux2(
-	.data0_i(ID_EX_instr20_16_o),
-	.data1_i(ID_EX_instr15_11_o),
+	.data0_i(ID_EX_instr20_16_o),//
+	.data1_i(ID_EX_instr15_11_o),//
 	.select_i(ID_EX_RegDst_o),
 	.data_o(MUX2_o)
 );
@@ -225,7 +225,7 @@ Shift_Left_Two_32 Shifter(
 );
 
 Adder Adder2_branch(
-	.src1_i(ID_EX_pc_o),
+	.src1_i(ID_EX_pc_o),//
 	.src2_i(Shift_o),
 	.sum_o(Adder2_branch_o)
 );
@@ -241,7 +241,7 @@ Pipe_EX_MEM EX_M(
 	.Adder2_i(Adder2_branch_o),				.Adder2_o(EX_M_Adder2_branch_o),
 	.zero_i(zero_o),								.zero_o(EX_M_zero_o),
 	.ALU_result_i(ALU_result_o),				.ALU_result_o(EX_M_ALU_result_o),
-	.Write_data_i(ID_EX_RTdata_o),			.Write_data_o(EX_M_RTdata_o),
+	.Write_data_i(ID_EX_RTdata_o),			.Write_data_o(EX_M_RTdata_o),//
 	.MUX2_i(MUX2_o),								.MUX2_o(EX_M_MUX2_o)
 );
 
@@ -253,7 +253,7 @@ assign PCSrc = EX_M_branch_o & EX_M_zero_o;
 Data_Memory DM(
 	.clk_i(clk_i),
 	.addr_i(EX_M_ALU_result_o),
-	.data_i(EX_M_RTdata_o),
+	.data_i(EX_M_RTdata_o),//
 	.MemRead_i(EX_M_MemRead_o),
 	.MemWrite_i(EX_M_MemWrite_o),
 	.data_o(DM_o)
