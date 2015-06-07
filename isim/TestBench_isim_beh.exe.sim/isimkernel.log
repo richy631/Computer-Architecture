@@ -1,0 +1,29 @@
+Command line:
+   TestBench_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  60850
+
+Fri Jun 05 21:14:49 2015
+
+
+ Elaboration Time: 0.234375 sec
+
+ Current Memory Usage: 522.719 Meg
+
+ Total Signals          : 187
+ Total Nets             : 2005
+ Total Signal Drivers   : 101
+ Total Blocks           : 22
+ Total Primitive Blocks : 20
+ Total Processes        : 116
+ Total Traceable Variables  : 108
+ Total Scalar Nets and Variables : 6101
+Total Line Count : 205
+
+ Total Simulation Time: 0.34375 sec
+
+ Current Memory Usage: 680.014 Meg
+
+Fri Jun 05 21:15:24 2015
+

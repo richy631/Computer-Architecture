@@ -31,8 +31,8 @@ wire [32-1:0]	RTdata;
 
 //decoder
 wire RegWrite;
-wire [3-1:0] ALU_op;
-wire [4-1:0] ALUSrc;
+wire [3-1:0] ALUop;
+wire ALUSrc;
 wire RegDst;
 wire branch;
 wire Jump;
@@ -51,8 +51,8 @@ wire [5-1:0] ID_EX_instr15_11_o;
 
 //control signal ...
 wire ID_EX_RegWrite_o;
-wire [3-1:0] ID_EX_ALU_op_o;
-wire [4-1:0] ID_EX_ALUSrc_o;
+wire [3-1:0] ID_EX_ALUop_o;
+wire ID_EX_ALUSrc_o;
 wire ID_EX_RegDst_o;
 wire ID_EX_branch_o;
 //wire ID_EX_Jump_o;
@@ -62,7 +62,7 @@ wire ID_EX_MemtoReg_o;
 
 
 /**** EX stage ****/
-wire [4-1:0]	ALUctrl;
+wire [4-1:0] ALUCtrl;
 wire [32-1:0] MUX1_o;
 wire [5-1:0] MUX2_o;
 wire [32-1:0] ALU_result_o;
@@ -122,13 +122,13 @@ Adder Add_pc(
 
 MUX_2to1 #(.size(32)) PCMUX(
 	.data0_i(pc_sum),
-	.data1_i(),
+	.data1_i(EX_M_zero_o),
 	.select_i(PCSrc),
 	.data_o(pc_in)
 );
 
 Instr_Memory IM(
-	.pc_addr_i(pc_sum),
+	.pc_addr_i(pc_out),
 	.instr_o(instr_o)
 );
 			
@@ -137,7 +137,7 @@ Pipe_IF_ID IF_ID(
 	.rst_i(rst_n),
 	.clk_i(clk_i),
 	.instr_i(instr_o),	.instr_o(IF_ID_instr_o),
-	.pc_i(pc_out),			.pc_o(IF_ID_pc_o)
+	.pc_i(pc_sum),			.pc_o(IF_ID_pc_o)
 );
 		
 //Instantiate the components in ID stage
@@ -270,9 +270,9 @@ Pipe_MEM_WB M_WB(
 );
 
 
-MUX_2to1 #(.size(5)) MUXWB(
-	.data0_i(M_WB_DM_o),
-	.data1_i(M_WB_ALU_result_o),
+MUX_2to1 #(.size(32)) MUXWB(
+	.data1_i(M_WB_DM_o),
+	.data0_i(M_WB_ALU_result_o),
 	.select_i(M_WB_MemtoReg_o),
 	.data_o(MUXWB_o)
 );
