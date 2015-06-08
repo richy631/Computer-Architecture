@@ -5,50 +5,49 @@ WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
 This is a Lite version of ISim.
-WARNING: File "D:/Computer_Architecture/final_102062106/Pipe_CPU.v" Line 75.  For instance cpu/PCMUX/, width 32 of formal port data1_i is not equal to width 1 of actual signal EX_M_zero_o.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
-WARNING: File 123 referenced on D:/Computer_Architecture/final_102062106/Instr_Memory.v at line 40 cannot be opened for reading. Please ensure that this file is available in the current working directory.Finished circuit initialization process.
-Cycle           0   PC=         0  instr=00100000001000110000000000000011
+WARNING: File Pipeline_text.txt referenced on D:/Computer_Architecture/final_102062106/Instr_Memory.v at line 40 cannot be opened for reading. Please ensure that this file is available in the current working directory.Finished circuit initialization process.
+Cycle           0   PC=         0  instr=00100000000000010000000000000011
 
-Cycle           1   PC=         0  instr=00100000001000110000000000000011
+Cycle           1   PC=         0  instr=00100000000000010000000000000011
 
-Cycle           2   PC=         4  instr=00000000000000000000000000000000
+Cycle           2   PC=         4  instr=00100000000000100000000000000100
 
-Cycle           3   PC=         8  instr=00000000000000000000000000000000
+Cycle           3   PC=         8  instr=00100000000000110000000000000001
 
-Cycle           4   PC=        12  instr=00000000000000000000000000000000
+Cycle           4   PC=        12  instr=10101100000000010000000000000100
 
-Cycle           5   PC=        16  instr=00000000000000000000000000000000
+Cycle           5   PC=        16  instr=00000000001000010010000000100000
 
-Cycle           6   PC=        20  instr=00000000000000000000000000000000
+Cycle           6   PC=        20  instr=00000000001000100011000000100101
 
-Cycle           7   PC=        24  instr=00000000000000000000000000000000
+Cycle           7   PC=        24  instr=00000000001000110011100000100100
 
-Cycle           8   PC=        28  instr=00000000000000000000000000000000
+Cycle           8   PC=        28  instr=00000000100000100010100000100010
 
-Cycle           9   PC=        32  instr=00000000000000000000000000000000
+Cycle           9   PC=        32  instr=00000000001000100100000000101010
 
-Cycle          10   PC=        36  instr=00000000000000000000000000000000
+Cycle          10   PC=        36  instr=00010000001000101111111111110110
 
-Cycle          11   PC=        40  instr=00000000000000000000000000000000
+Cycle          11   PC=        40  instr=10001100000010100000000000000100
 
 
 ==========================================================================================
 
 ---------------------------------Register-------------------------------------------------
 
-r0=          x, r1=          0, r2=          0, r3=          x, r4=          0, r5=          0, r6=          0, r7=          0
+r0=          0, r1=          3, r2=          4, r3=          1, r4=          6, r5=          0, r6=          7, r7=          1
  
 r8=          0, r9=          0, r10=          0, r11=          0, r12=          0, r13=          0, r14=          0, r15=          0
  
 
 -------------------------------Memory----------------------------------------------------
 
-m0=          0, m1=          0, m2=          0, m3=          0, m4=          0, m5=          0, m6=          0, m7=          0
+m0=          0, m1=          3, m2=          0, m3=          0, m4=          0, m5=          0, m6=          0, m7=          0
 
 m8=          0, m9=          0, m10=          0, m11=          0, m12=          0, m13=          0, m14=          0, m15=          0
 
@@ -67,14 +66,14 @@ Cycle          14   PC=        52  instr=00000000000000000000000000000000
 
 ---------------------------------Register-------------------------------------------------
 
-r0=          x, r1=          0, r2=          0, r3=          x, r4=          0, r5=          0, r6=          0, r7=          0
+r0=          0, r1=          3, r2=          4, r3=          1, r4=          6, r5=          2, r6=          7, r7=          1
  
-r8=          0, r9=          0, r10=          0, r11=          0, r12=          0, r13=          0, r14=          0, r15=          0
+r8=          1, r9=          0, r10=          0, r11=          0, r12=          0, r13=          0, r14=          0, r15=          0
  
 
 -------------------------------Memory----------------------------------------------------
 
-m0=          0, m1=          0, m2=          0, m3=          0, m4=          0, m5=          0, m6=          0, m7=          0
+m0=          0, m1=          3, m2=          0, m3=          0, m4=          0, m5=          0, m6=          0, m7=          0
 
 m8=          0, m9=          0, m10=          0, m11=          0, m12=          0, m13=          0, m14=          0, m15=          0
 

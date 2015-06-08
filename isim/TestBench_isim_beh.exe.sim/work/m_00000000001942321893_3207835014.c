@@ -330,7 +330,7 @@ LAB8:    t21 = (t6 + 4);
 LAB10:    xsi_set_current_line(37, ng0);
 
 LAB13:    xsi_set_current_line(38, ng0);
-    t28 = ((char*)((ng2)));
+    t28 = ((char*)((ng1)));
     t29 = (t0 + 2728);
     t32 = (t0 + 2728);
     t33 = (t32 + 72U);
@@ -393,7 +393,7 @@ LAB17:    xsi_set_current_line(38, ng0);
         goto LAB18;
 
 LAB19:    xsi_set_current_line(38, ng0);
-    t2 = ((char*)((ng2)));
+    t2 = ((char*)((ng1)));
     t3 = (t0 + 2728);
     t4 = (t0 + 2728);
     t5 = (t4 + 72U);

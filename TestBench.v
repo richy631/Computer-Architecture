@@ -33,7 +33,7 @@ Pipe_CPU cpu(
 always #(`CYCLE_TIME/2) CLK = ~CLK;	
 
 initial  begin
-	$readmemb("123.txt", cpu.IM.Instr_Mem);
+	$readmemb("Pipeline_test.txt", cpu.IM.Instr_Mem);
     //  
 	CLK = 0; 
 	RST = 0;

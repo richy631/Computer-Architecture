@@ -42,20 +42,18 @@ wire MemtoReg;
 wire [32-1:0] Sign_o;
 
 
-wire [32-1:0] ID_EX_pc_o;
-wire [32-1:0] ID_EX_RSdata_o;
-wire [32-1:0] ID_EX_RTdata_o;
-wire [32-1:0] ID_EX_Sign_o;
-wire [5-1:0] ID_EX_instr20_16_o;
-wire [5-1:0] ID_EX_instr15_11_o;
+wire [32-1:0]	ID_EX_pc_o;
+wire [32-1:0]	ID_EX_RSdata_o;
+wire [32-1:0]	ID_EX_RTdata_o;
+wire [32-1:0]	ID_EX_Sign_o;
+wire [5-1:0]	ID_EX_instr20_16_o;
+wire [5-1:0]	ID_EX_instr15_11_o;
 
 //control signal ...
 wire ID_EX_WB_RegWrite_o;
-wire [3-1:0] ID_EX_ALUop_o;
+wire [3-1:0]	ID_EX_ALUop_o;
 wire ID_EX_ALUSrc_o;
 wire ID_EX_RegDst_o;
-wire ID_EX_M_branch_o;
-wire [3-1:0] ID_EX_ALUop_o;
 wire ID_EX_M_branch_o;
 wire ID_EX_M_MemRead_o;
 wire ID_EX_M_MemWrite_o;

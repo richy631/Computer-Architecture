@@ -22,7 +22,7 @@
 #define alloca _alloca
 #endif
 static const char *ng0 = "D:/Computer_Architecture/final_102062106/TestBench.v";
-static const char *ng1 = "123.txt";
+static const char *ng1 = "Pipeline_test.txt";
 static int ng2[] = {0, 0};
 static int ng3[] = {1, 0};
 static const char *ng4 = "Cycle %d   PC=%d  instr=%b\n";
