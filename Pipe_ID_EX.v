@@ -7,7 +7,7 @@ module Pipe_ID_EX(
 	M_MemRead_i,	M_MemRead_o,
 	M_MemWrite_i,	M_MemWrite_o,
 	EX_ALUop_i,		EX_ALUop_o,
-	EX_ALUsrc_i,	EX_ALUsrc_o,
+	EX_ALUSrc_i,	EX_ALUSrc_o,
 	EX_RegDst_i,	EX_RegDst_o,
 	pc_i,				pc_o,
 	RSdata_i,		RSdata_o,
@@ -24,7 +24,7 @@ module Pipe_ID_EX(
 	input M_MemRead_i;
 	input M_MemWrite_i;
 	input [3-1:0] EX_ALUop_i;
-	input EX_ALUsrc_i;
+	input EX_ALUSrc_i;
 	input EX_RegDst_i;
 	input [32-1:0] RSdata_i;
 	input [32-1:0] RTdata_i;
@@ -39,7 +39,7 @@ module Pipe_ID_EX(
 	output reg M_MemRead_o;
 	output reg M_MemWrite_o;
 	output reg [3-1:0] EX_ALUop_o;
-	output reg EX_ALUsrc_o;
+	output reg EX_ALUSrc_o;
 	output reg EX_RegDst_o;
 	output reg [32-1:0] RSdata_o;
 	output reg [32-1:0] RTdata_o;
@@ -56,7 +56,7 @@ module Pipe_ID_EX(
 			M_MemRead_o <= 0;
 			M_MemWrite_o <= 0;
 			EX_ALUop_o <= 0;
-			EX_ALUsrc_o <= 0;
+			EX_ALUSrc_o <= 0;
 			EX_RegDst_o <= 0;
 			RSdata_o <= 0;
 			RTdata_o <= 0;
@@ -73,7 +73,7 @@ module Pipe_ID_EX(
 			M_MemRead_o <= M_MemRead_i;
 			M_MemWrite_o <= M_MemWrite_i;
 			EX_ALUop_o <= EX_ALUop_i;
-			EX_ALUsrc_o <= EX_ALUsrc_i;
+			EX_ALUSrc_o <= EX_ALUSrc_i;
 			EX_RegDst_o <= EX_RegDst_i;
 			RSdata_o <= RSdata_i;
 			RTdata_o <= RTdata_i;
